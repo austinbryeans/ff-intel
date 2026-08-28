@@ -3,124 +3,135 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="theme-color" content="#0b0e14">
+<meta name="theme-color" content="#0c0f15">
 <title>Fantasy Intel · Fri, Aug 28, 12:03 PM</title>
 <style>
 :root{
-  --bg:#0b0e14; --bg2:#11151f; --card:#151a26; --card2:#1b2130;
-  --line:#242c3d;
-  --tx:#e8ecf5; --tx2:#98a2b8; --tx3:#6b768f;
-  --acc:#4da3ff; --gold:#f5b23d;
-  --injury:#ff5c5c; --transaction:#c084fc; --practice:#4da3ff;
-  --role:#3ecf8e; --rumor:#f5b23d; --hype:#7c8798; --take:#5c6780;
+  --bg:#0c0f15; --card:#141a26; --card2:#1a2130; --line:#232b3d;
+  --tx:#e9edf6; --tx2:#9aa4ba; --tx3:#6d7890;
+  --acc:#4da3ff; --red:#ff5c5c; --grn:#3ecf8e; --gold:#f5b23d; --pur:#c084fc; --pink:#f472b6;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;padding-bottom:64px}
+body{background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;padding-bottom:70px}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
 
-header.top{position:sticky;top:0;z-index:50;background:rgba(11,14,20,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
-.brand{font-weight:700;font-size:17px;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--role);box-shadow:0 0 10px var(--role)}
-.stamp{color:var(--tx3);font-size:12.5px;font-variant-numeric:tabular-nums}
-.spacer{flex:1}
-
-.lgs{display:flex;gap:6px;flex-wrap:wrap}
-.lg{padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx2);font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
-.lg:hover{border-color:var(--acc);color:var(--tx)}
+header.top{position:sticky;top:0;z-index:50;background:rgba(12,15,21,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:12px;padding:11px 16px;max-width:860px;margin:0 auto;flex-wrap:wrap}
+.brand{font-weight:750;font-size:16px;display:flex;gap:8px;align-items:center;letter-spacing:-.2px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn)}
+.lgs{display:flex;gap:6px}
+.lg{padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--tx2);font-size:13px;font-weight:600;cursor:pointer}
+.lg:hover{color:var(--tx)}
 .lg.on{background:var(--acc);border-color:var(--acc);color:#04121f}
+.spacer{flex:1}
+.stamp{color:var(--tx3);font-size:12px;font-variant-numeric:tabular-nums}
 
-.hero{padding:22px 0 6px}
-.h1{font-size:26px;font-weight:750;letter-spacing:-.7px}
-.sub{color:var(--tx2);font-size:13.5px;margin-top:4px}
-.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.pill{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font-size:12px;color:var(--tx2)}
+.hero{padding:20px 0 4px}
+.h1{font-size:24px;font-weight:750;letter-spacing:-.5px}
+.sub{color:var(--tx2);font-size:13px;margin-top:3px}
+.meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:4px 9px;font-size:11.5px;color:var(--tx2)}
 .pill b{color:var(--tx);font-weight:650}
 
-.sec{margin-top:26px}
-.sec-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
-.sec-t{font-size:13px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;color:var(--tx2)}
-.sec-n{font-size:12px;color:var(--tx3)}
-
-.alerts{display:grid;gap:8px}
-.alert{display:flex;gap:11px;align-items:flex-start;background:linear-gradient(90deg,rgba(255,92,92,.09),transparent 60%);border:1px solid rgba(255,92,92,.28);border-left:3px solid var(--injury);border-radius:10px;padding:11px 13px}
-.alert.tx{background:linear-gradient(90deg,rgba(192,132,252,.09),transparent 60%);border-color:rgba(192,132,252,.28);border-left-color:var(--transaction)}
-.alert-w{flex:1;min-width:0}
-.alert-n{font-weight:680;font-size:14px}
-.alert-n .sm{color:var(--tx3);font-weight:500;font-size:12px;margin-left:6px}
-.alert-t{color:var(--tx2);font-size:13px;margin-top:3px}
-
-.ctrls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px;position:sticky;top:53px;z-index:40;background:var(--bg);padding:10px 0 8px}
-.chip{padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--tx2);font-size:12.5px;font-weight:600;cursor:pointer;transition:.15s;white-space:nowrap}
-.chip:hover{color:var(--tx)}
-.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
-input.q{flex:1;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 12px;color:var(--tx);font-size:13.5px;outline:none}
-input.q:focus{border-color:var(--acc)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;align-items:start}
-.card{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden}
-.card.hot{border-color:rgba(255,92,92,.4)}
-.ch{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--card2);border-bottom:1px solid var(--line);cursor:pointer}
-.pos{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:.3px;flex:none;background:#2a3245;color:var(--tx2)}
-.pos.QB{background:rgba(244,114,182,.18);color:#f472b6}
-.pos.RB{background:rgba(62,207,142,.18);color:#3ecf8e}
-.pos.WR{background:rgba(77,163,255,.18);color:#4da3ff}
-.pos.TE{background:rgba(245,178,61,.18);color:#f5b23d}
-.pos.K,.pos.DEF{background:rgba(148,163,184,.18);color:#94a3b8}
-.cn{flex:1;min-width:0}
-.nm{font-weight:680;font-size:14.5px;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tm{color:var(--tx3);font-size:11.5px;margin-top:1px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.badge{font-size:9.5px;font-weight:750;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:4px}
-.badge.START{background:rgba(62,207,142,.16);color:#3ecf8e}
-.badge.BENCH{background:rgba(148,163,184,.14);color:#94a3b8}
-.badge.TAXI{background:rgba(245,178,61,.16);color:#f5b23d}
-.badge.IR{background:rgba(255,92,92,.16);color:#ff5c5c}
-.badge.inj{background:rgba(255,92,92,.16);color:#ff5c5c}
-.badge.fa{background:rgba(77,163,255,.16);color:#4da3ff}
-.heat{flex:none;text-align:right}
-.heat-n{font-size:15px;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.4px}
-.heat-l{font-size:9px;color:var(--tx3);letter-spacing:.6px;text-transform:uppercase}
-.heat-b{height:2.5px;border-radius:2px;background:var(--line);margin-top:4px;width:52px;overflow:hidden}
-.heat-b i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--injury))}
-
-.items{padding:4px 0}
-.it{display:block;padding:10px 14px;border-bottom:1px solid rgba(36,44,61,.55)}
-.it:last-child{border-bottom:0}
-.it:hover{background:rgba(255,255,255,.022)}
-.ih{display:flex;align-items:center;gap:7px;margin-bottom:4px;flex-wrap:wrap}
-.cat{font-size:9.5px;font-weight:750;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:4px}
-.cat.injury{background:rgba(255,92,92,.15);color:var(--injury)}
-.cat.transaction{background:rgba(192,132,252,.15);color:var(--transaction)}
-.cat.practice{background:rgba(77,163,255,.15);color:var(--practice)}
-.cat.role{background:rgba(62,207,142,.15);color:var(--role)}
-.cat.rumor{background:rgba(245,178,61,.15);color:var(--rumor)}
-.cat.hype{background:rgba(124,135,152,.16);color:#a5b0c2}
-.cat.take{background:rgba(92,103,128,.16);color:#8d99b0}
-.au{font-size:11.5px;color:var(--tx2);font-weight:600}
-.fol{font-size:10.5px;color:var(--tx3)}
-.ago{font-size:10.5px;color:var(--tx3);margin-left:auto;font-variant-numeric:tabular-nums}
-.tx{font-size:13.2px;line-height:1.5;color:#cdd5e4}
-.tx .hl{color:var(--tx);font-weight:600}
-
-.empty{padding:16px 14px;color:var(--tx3);font-size:12.5px;font-style:italic}
-.none{text-align:center;padding:44px 16px;color:var(--tx3);border:1px dashed var(--line);border-radius:12px}
-.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:13px 15px;color:var(--tx2);font-size:13.2px}
+.sec-h{display:flex;align-items:baseline;gap:9px;margin:24px 0 10px}
+.sec-t{font-size:12px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:var(--tx2)}
+.sec-n{font-size:11.5px;color:var(--tx3)}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;color:var(--tx2);font-size:13px;margin-top:18px}
 .note b{color:var(--tx)}
 
-footer{margin-top:40px;padding:18px 0;border-top:1px solid var(--line);color:var(--tx3);font-size:11.5px;line-height:1.7}
+/* ---- signal board: flat, high contrast ---- */
+.sigs{display:grid;gap:7px}
+.sig{display:block;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--tx3);border-radius:10px;padding:10px 13px}
+.sig:hover{background:var(--card2)}
+.sig.c-injury{border-left-color:var(--red)}
+.sig.c-transaction{border-left-color:var(--pur)}
+.sig.c-practice{border-left-color:var(--acc)}
+.sig.c-role{border-left-color:var(--grn)}
+.sig.c-rumor{border-left-color:var(--gold)}
+.sh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.sh b{font-size:13.5px;font-weight:700}
+.sm{color:var(--tx3);font-size:11.5px}
+.sago{color:var(--tx3);font-size:11px;margin-left:auto}
+.st{color:#d8dfec;font-size:13px;line-height:1.5}
+
+/* ---- controls ---- */
+.ctrls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;position:sticky;top:51px;z-index:40;background:var(--bg);padding:12px 0 9px;margin-top:8px}
+.chip{padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--tx2);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.chip:hover{color:var(--tx)}
+.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+input.q{flex:1;min-width:140px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 11px;color:var(--tx);font-size:13px;outline:none}
+input.q:focus{border-color:var(--acc)}
+
+/* ---- position sections ---- */
+.psec{margin-top:20px}
+.psec-h{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--tx2);margin-bottom:9px}
+.pbar{width:3px;height:13px;border-radius:2px;background:var(--tx3)}
+.pbar.QB{background:var(--pink)} .pbar.RB{background:var(--grn)} .pbar.WR{background:var(--acc)} .pbar.TE{background:var(--gold)}
+.psec-n{color:var(--tx3);font-weight:650}
+
+/* ---- player cards (accordion) ---- */
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.pcard.hot{border-color:rgba(255,92,92,.4)}
+.prow{display:flex;align-items:center;gap:12px;padding:11px 14px;cursor:pointer;-webkit-user-select:none;user-select:none}
+.prow:hover{background:var(--card2)}
+.pos{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:800;flex:none;background:#2a3245;color:var(--tx2)}
+.pos.QB{background:rgba(244,114,182,.16);color:var(--pink)}
+.pos.RB{background:rgba(62,207,142,.16);color:var(--grn)}
+.pos.WR{background:rgba(77,163,255,.16);color:var(--acc)}
+.pos.TE{background:rgba(245,178,61,.16);color:var(--gold)}
+.pos.K,.pos.DEF{background:rgba(148,163,184,.16);color:#94a3b8}
+.pmeta{flex:1;min-width:0}
+.pname{font-weight:680;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.psub{color:var(--tx3);font-size:11.5px;margin-top:2px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.badge{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:4px}
+.badge.START{background:rgba(62,207,142,.15);color:var(--grn)}
+.badge.BENCH{background:rgba(148,163,184,.13);color:#94a3b8}
+.badge.TAXI{background:rgba(245,178,61,.15);color:var(--gold)}
+.badge.IR{background:rgba(255,92,92,.15);color:var(--red)}
+.badge.inj{background:rgba(255,92,92,.15);color:var(--red)}
+.badge.fa{background:rgba(77,163,255,.15);color:var(--acc)}
+.pbuzz{margin-left:auto;text-align:right;color:var(--tx3);font-size:9px;text-transform:uppercase;letter-spacing:.5px;flex:none}
+.pbuzz b{display:block;color:var(--tx2);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+.chev{color:var(--tx3);font-size:10px;flex:none;transition:transform .15s}
+.pcard.open .chev{transform:rotate(180deg)}
+
+.items{border-top:1px solid rgba(35,43,61,.7)}
+.it{display:block;padding:9px 14px;border-bottom:1px solid rgba(35,43,61,.55)}
+.it:last-child{border-bottom:0}
+.it:hover{background:rgba(255,255,255,.02)}
+.ih{display:flex;align-items:center;gap:7px;margin-bottom:3px;flex-wrap:wrap}
+.cat{font-size:9px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:4px}
+.cat.injury{background:rgba(255,92,92,.14);color:var(--red)}
+.cat.transaction{background:rgba(192,132,252,.14);color:var(--pur)}
+.cat.practice{background:rgba(77,163,255,.14);color:var(--acc)}
+.cat.role{background:rgba(62,207,142,.14);color:var(--grn)}
+.cat.rumor{background:rgba(245,178,61,.14);color:var(--gold)}
+.cat.hype{background:rgba(124,135,152,.15);color:#a5b0c2}
+.cat.take{background:rgba(92,103,128,.15);color:#8d99b0}
+.au{font-size:11px;color:var(--tx2);font-weight:600}
+.fol{font-size:10px;color:var(--tx3)}
+.ago{font-size:10px;color:var(--tx3);margin-left:auto}
+.tx{font-size:13px;line-height:1.5;color:#cbd3e2}
+.tx .hl{color:var(--tx);font-weight:600}
+.empty{padding:10px 14px;color:var(--tx3);font-size:12px;font-style:italic}
+.morebtn{display:block;width:100%;padding:7px;background:transparent;border:0;border-top:1px solid rgba(35,43,61,.7);color:var(--acc);font-size:11.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.morebtn:hover{background:var(--card2)}
+.none{text-align:center;padding:40px 16px;color:var(--tx3);border:1px dashed var(--line);border-radius:12px;margin-top:14px}
+
+footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var(--tx3);font-size:11px;line-height:1.7}
 .hide{display:none!important}
-@media(max-width:640px){
-  .grid{grid-template-columns:1fr}
-  .h1{font-size:21px}
-  .ctrls{top:auto;position:static}
+@media(max-width:560px){
+  .h1{font-size:20px}
+  .ctrls{position:static}
   .top-in{gap:8px}
+  .sago{margin-left:0;width:100%}
 }
 </style>
 </head><body>
 
-<header class="top"><div class="wrap top-in">
+<header class="top"><div class="top-in">
   <div class="brand"><span class="dot"></span>Fantasy Intel</div>
   <div class="lgs"><div class="lg on" data-k="all22">All-22 Dynasty</div><div class="lg" data-k="victory">Victory As Vice</div></div>
   <div class="spacer"></div>
@@ -129,33 +140,28 @@ footer{margin-top:40px;padding:18px 0;border-top:1px solid var(--line);color:var
 
 <div class="wrap">
   <div class="hero" id="lgHead"></div>
+  <div id="noteBox" class="hide"></div>
 
-  <div id="noteBox" class="sec hide"></div>
-
-  <div class="sec hide" id="alertSec">
+  <div class="hide" id="alertSec">
     <div class="sec-h"><div class="sec-t">Signal Board</div><div class="sec-n" id="alertN"></div></div>
-    <div class="alerts" id="alerts"></div>
+    <div class="sigs" id="alerts"></div>
   </div>
 
-  <div class="sec">
-    <div class="ctrls"><div class="chip on" data-c="all">All</div><div class="chip" data-c="injury">Injury</div><div class="chip" data-c="transaction">Transaction</div><div class="chip" data-c="practice">Practice</div><div class="chip" data-c="role">Role</div><div class="chip" data-c="rumor">Rumor</div><div class="chip" data-c="hype">Hype</div><div class="chip" data-c="take">Take</div><input class="q" id="q" placeholder="Filter by player, team, or keyword…"></div>
+  <div class="ctrls"><div class="chip on" data-c="all">All</div><div class="chip" data-c="injury">Injury</div><div class="chip" data-c="transaction">Transaction</div><div class="chip" data-c="practice">Practice</div><div class="chip" data-c="role">Role</div><div class="chip" data-c="rumor">Rumor</div><div class="chip" data-c="hype">Hype</div><div class="chip" data-c="take">Take</div><input class="q" id="q" placeholder="Filter by player, team, or keyword…"><div class="chip" id="xall">Expand all</div></div>
 
-    <div id="rosterSec">
-      <div class="sec-h"><div class="sec-t">My Roster</div><div class="sec-n" id="rosterN"></div></div>
-      <div class="grid" id="roster"></div>
-    </div>
+  <div id="rosterSec"></div>
 
-    <div id="waiverSec" style="margin-top:26px">
-      <div class="sec-h"><div class="sec-t" id="waiverT">Waiver Wire Radar</div><div class="sec-n" id="waiverN"></div></div>
-      <div class="grid" id="waivers"></div>
-    </div>
+  <div id="waiverSec" class="hide">
+    <div class="sec-h"><div class="sec-t" id="waiverT">Waiver Wire Radar</div><div class="sec-n" id="waiverN"></div></div>
+    <div id="waivers"></div>
   </div>
 
   <footer>
     Generated Fri, Aug 28, 12:03 PM CT · 30 rostered players + 17 waiver targets scanned · 241 items surfaced.<br>
-    Sources: Sleeper API (rosters, matchups, FAAB, trending adds) and X/Twitter Latest + Top search per player.
-    Items are de-duplicated, stripped of promo/giveaway spam and multi-player ranking lists, then scored on account reach, engagement, recency, and news category.
-    Buzz score is relative within this report, not a projection. Verify anything actionable before spending FAAB.
+    Sources: Sleeper API (rosters, FAAB, trending adds) and X/Twitter search per player. Items are de-duplicated,
+    stripped of promo spam and ranking-list noise, then scored on account reach, engagement, recency, and news value.
+    Each player shows the top two items; expand for the rest. Signal Board only admits credible injury, transaction,
+    or practice reports. Verify anything actionable before spending FAAB.
   </footer>
 </div>
 
@@ -163,16 +169,14 @@ footer{margin-top:40px;padding:18px 0;border-top:1px solid var(--line);color:var
 <script>
 (function(){
   var D = window.__DATA__;
-  var state = { league: D.leagues[0] && D.leagues[0].key, cat: 'all', q: '' };
+  var state = { league: D.leagues[0] && D.leagues[0].key, cat:'all', q:'', open:{}, xall:false };
+  var POS = ['QB','RB','WR','TE','K','DEF'];
+  var PLABEL = {QB:'Quarterbacks',RB:'Running Backs',WR:'Wide Receivers',TE:'Tight Ends',K:'Kickers',DEF:'Defenses'};
+  var SLOT = {STARTER:0,BENCH:1,IR:2,TAXI:3};
 
-  function agoStr(h){
-    if(h==null) return '';
-    if(h < 1) return Math.max(1,Math.round(h*60))+'m';
-    if(h < 24) return Math.round(h)+'h';
-    return Math.round(h/24)+'d';
-  }
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-
+  function agoStr(h){ if(h==null) return ''; if(h<1) return Math.max(1,Math.round(h*60))+'m'; if(h<24) return Math.round(h)+'h'; return Math.round(h/24)+'d'; }
+  function fol(n){ n=n||0; return n>=1e6?(n/1e6).toFixed(1)+'M':n>=1000?Math.round(n/1000)+'k':''+n; }
   function highlight(text, name){
     var out = esc(text);
     if(!name) return out;
@@ -182,108 +186,133 @@ footer{margin-top:40px;padding:18px 0;border-top:1px solid var(--line);color:var
     });
     return out;
   }
+  function lgNow(){ for(var i=0;i<D.leagues.length;i++) if(D.leagues[i].key===state.league) return D.leagues[i]; return D.leagues[0]; }
+  function filterMode(){ return state.cat!=='all' || !!state.q; }
 
-  function cardHTML(p, isWaiver){
-    var items = p.items.filter(function(i){
-      if(state.cat !== 'all' && i.category !== state.cat) return false;
-      return true;
-    });
+  function visItems(p){
+    var items = p.items || [];
+    if(state.cat!=='all') items = items.filter(function(i){ return i.category===state.cat; });
     if(state.q){
       var q = state.q.toLowerCase();
-      var nameMatch = (p.name||'').toLowerCase().indexOf(q) >= 0 || (p.team||'').toLowerCase().indexOf(q) >= 0;
-      if(!nameMatch){
-        items = items.filter(function(i){ return i.text.toLowerCase().indexOf(q) >= 0; });
-        if(!items.length) return '';
-      }
+      var nameMatch = (p.name||'').toLowerCase().indexOf(q)>=0 || (p.team||'').toLowerCase().indexOf(q)>=0;
+      if(!nameMatch) items = items.filter(function(i){ return i.text.toLowerCase().indexOf(q)>=0; });
     }
-    if(state.cat !== 'all' && !items.length) return '';
+    return items;
+  }
 
-    var maxHeat = 90;
-    var pct = Math.min(100, Math.round((p.heat/maxHeat)*100));
+  function itemHTML(i, name){
+    return '<a class="it" href="'+esc(i.url)+'" target="_blank" rel="noopener">'
+      + '<div class="ih"><span class="cat '+esc(i.category)+'">'+esc(D.catLabels[i.category]||i.category)+'</span>'
+      + '<span class="au">@'+esc(i.author||'?')+'</span><span class="fol">'+fol(i.followers)+'</span>'
+      + '<span class="ago">'+agoStr(i.hoursAgo)+'</span></div>'
+      + '<div class="tx">'+highlight(i.text, name)+'</div></a>';
+  }
+
+  function cardHTML(p, isW){
+    var vis = visItems(p);
+    if(filterMode() && !vis.length) return '';
+    var key = state.league+'|'+(p.id||p.name);
+    var open = state.xall || !!state.open[key];
+    var shown = filterMode() ? vis : (open ? vis : vis.slice(0,2));
+    var extra = vis.length - shown.length;
+
     var badges = '';
-    if(isWaiver){ badges += '<span class="badge fa">FA</span>'; }
-    else if(p.slot){ badges += '<span class="badge '+esc(p.slot==='STARTER'?'START':p.slot)+'">'+esc(p.slot==='STARTER'?'START':p.slot)+'</span>'; }
+    if(isW){ badges += '<span class="badge fa">FA</span>'; }
+    else if(p.slot){ var sl = p.slot==='STARTER'?'START':p.slot; badges += '<span class="badge '+esc(sl)+'">'+esc(sl)+'</span>'; }
     if(p.injury){ badges += '<span class="badge inj">'+esc(p.injury)+'</span>'; }
 
     var sub = [p.pos, p.team].filter(Boolean).join(' · ');
-    if(isWaiver && p.adds){ sub += ' · +' + Number(p.adds).toLocaleString() + ' adds'; }
-    if(p.age){ sub += ' · ' + p.age + 'yo'; }
+    if(isW && p.adds) sub += ' · +'+Number(p.adds).toLocaleString()+' adds in 24h';
 
-    var body = items.length ? items.map(function(i){
-      return '<a class="it" href="'+esc(i.url)+'" target="_blank" rel="noopener">'
-        + '<div class="ih">'
-        +   '<span class="cat '+esc(i.category)+'">'+esc(D.catLabels[i.category]||i.category)+'</span>'
-        +   '<span class="au">@'+esc(i.author)+'</span>'
-        +   '<span class="fol">'+ (i.followers>=1000 ? Math.round(i.followers/1000)+'k' : i.followers) +'</span>'
-        +   '<span class="ago">'+agoStr(i.hoursAgo)+'</span>'
-        + '</div>'
-        + '<div class="tx">'+highlight(i.text, p.name)+'</div>'
-        + '</a>';
-    }).join('') : '<div class="empty">No chatter matched this filter.</div>';
+    var right = isW
+      ? '<div class="pbuzz"><b>'+fol(p.adds||0)+'</b>adds</div>'
+      : '<div class="pbuzz"><b>'+Math.round(p.heat||0)+'</b>buzz</div>';
 
-    return '<div class="card'+(p.alert?' hot':'')+'" data-name="'+esc((p.name||'').toLowerCase())+'">'
-      + '<div class="ch">'
-      +   '<div class="pos '+esc(p.pos||'')+'">'+esc(p.pos||'?')+'</div>'
-      +   '<div class="cn"><div class="nm">'+esc(p.name)+'</div><div class="tm">'+esc(sub)+' '+badges+'</div></div>'
-      +   '<div class="heat"><div class="heat-n">'+Math.round(p.heat)+'</div><div class="heat-l">buzz</div><div class="heat-b"><i style="width:'+pct+'%"></i></div></div>'
-      + '</div>'
-      + '<div class="items">'+body+'</div>'
-      + '</div>';
+    var body = shown.length
+      ? '<div class="items">'+shown.map(function(i){return itemHTML(i,p.name);}).join('')+'</div>'
+      : (filterMode() ? '' : '<div class="items"><div class="empty">No fresh chatter today.</div></div>');
+
+    var btn = '';
+    if(!filterMode() && vis.length>2){
+      btn = '<button class="morebtn" data-k="'+esc(key)+'">'+(open ? 'Show less' : '+'+extra+' more')+'</button>';
+    }
+    var chev = (!filterMode() && vis.length>2) ? '<div class="chev">\u25be</div>' : '';
+
+    return '<div class="pcard'+(open?' open':'')+(p.alert?' hot':'')+'">'
+      + '<div class="prow" data-k="'+esc(key)+'">'
+      + '<div class="pos '+esc(p.pos||'')+'">'+esc(p.pos||'?')+'</div>'
+      + '<div class="pmeta"><div class="pname">'+esc(p.name)+'</div><div class="psub">'+esc(sub)+' '+badges+'</div></div>'
+      + right + chev
+      + '</div>' + body + btn + '</div>';
   }
 
   function render(){
-    var lg = D.leagues.filter(function(l){return l.key===state.league;})[0];
-    if(!lg) return;
-
+    var lg = lgNow();
     document.querySelectorAll('.lg').forEach(function(b){ b.classList.toggle('on', b.dataset.k===state.league); });
-    document.querySelectorAll('.chip').forEach(function(b){ b.classList.toggle('on', b.dataset.c===state.cat); });
+    document.querySelectorAll('.chip[data-c]').forEach(function(b){ b.classList.toggle('on', b.dataset.c===state.cat); });
+    var xb = document.getElementById('xall');
+    if(xb){ xb.textContent = state.xall ? 'Collapse all' : 'Expand all'; xb.classList.toggle('on', state.xall); }
 
-    var head = document.getElementById('lgHead');
-    head.innerHTML = '<div class="h1">'+esc(lg.name)+'</div>'
-      + '<div class="sub">'+esc(lg.subtitle||'')+'</div>'
-      + '<div class="meta">'+ (lg.pills||[]).map(function(p){ return '<span class="pill">'+p+'</span>'; }).join('') +'</div>';
+    document.getElementById('lgHead').innerHTML =
+      '<div class="h1">'+esc(lg.name)+'</div><div class="sub">'+esc(lg.subtitle||'')+'</div>'
+      + '<div class="meta">'+(lg.pills||[]).map(function(p){return '<span class="pill">'+p+'</span>';}).join('')+'</div>';
 
-    // alerts
-    var alerts = lg.players.filter(function(p){return p.alert;}).slice(0,8);
-    var ah = document.getElementById('alerts');
-    var as = document.getElementById('alertSec');
-    if(alerts.length){
-      as.classList.remove('hide');
-      document.getElementById('alertN').textContent = alerts.length + ' flagged';
-      ah.innerHTML = alerts.map(function(p){
-        var a = p.alert;
-        return '<a class="alert '+(a.category==='transaction'?'tx':'')+'" href="'+esc(a.url)+'" target="_blank" rel="noopener">'
-          + '<div class="alert-w"><div class="alert-n">'+esc(p.name)+'<span class="sm">'+esc(p.pos||'')+' · '+esc(p.team||'')+' · '+esc(D.catLabels[a.category]||a.category)+' · '+agoStr(a.hoursAgo)+' ago</span></div>'
-          + '<div class="alert-t">'+highlight(a.text.slice(0,240), p.name)+'</div></div></a>';
-      }).join('');
-    } else { as.classList.add('hide'); }
-
-    // note
     var nd = document.getElementById('noteBox');
     if(lg.note){ nd.classList.remove('hide'); nd.innerHTML = '<div class="note">'+lg.note+'</div>'; }
     else nd.classList.add('hide');
 
-    // roster
-    var rh = document.getElementById('roster');
-    var cards = lg.players.map(function(p){return cardHTML(p,false);}).filter(Boolean);
-    rh.innerHTML = cards.length ? cards.join('') : '<div class="none">No roster chatter matched.</div>';
-    document.getElementById('rosterN').textContent = cards.length + ' of ' + lg.players.length;
-    document.getElementById('rosterSec').classList.toggle('hide', !lg.players.length);
+    // signal board
+    var alerts = lg.players.filter(function(p){return p.alert;}).slice(0,8);
+    var as = document.getElementById('alertSec');
+    if(alerts.length){
+      as.classList.remove('hide');
+      document.getElementById('alertN').textContent = alerts.length+' flagged';
+      document.getElementById('alerts').innerHTML = alerts.map(function(p){
+        var a = p.alert;
+        return '<a class="sig c-'+esc(a.category)+'" href="'+esc(a.url)+'" target="_blank" rel="noopener">'
+          + '<div class="sh"><b>'+esc(p.name)+'</b><span class="sm">'+esc([p.pos,p.team].filter(Boolean).join(' · '))+'</span>'
+          + '<span class="cat '+esc(a.category)+'">'+esc(D.catLabels[a.category]||a.category)+'</span>'
+          + '<span class="sago">'+agoStr(a.hoursAgo)+' ago · @'+esc(a.author||'?')+' · '+fol(a.followers)+'</span></div>'
+          + '<div class="st">'+highlight(a.text.slice(0,230), p.name)+'</div></a>';
+      }).join('');
+    } else as.classList.add('hide');
 
-    // waivers
-    var wh = document.getElementById('waivers');
+    // roster grouped by position
+    var rs = document.getElementById('rosterSec');
+    if(!lg.players.length){ rs.innerHTML=''; rs.classList.add('hide'); }
+    else {
+      rs.classList.remove('hide');
+      var byPos = {};
+      lg.players.forEach(function(p){ var k = POS.indexOf(p.pos)>=0 ? p.pos : 'Other'; (byPos[k]=byPos[k]||[]).push(p); });
+      var html = POS.concat(['Other']).map(function(pos){
+        var arr = byPos[pos];
+        if(!arr || !arr.length) return '';
+        arr.sort(function(a,b){ var s=(SLOT[a.slot]!=null?SLOT[a.slot]:9)-(SLOT[b.slot]!=null?SLOT[b.slot]:9); return s || (b.heat||0)-(a.heat||0); });
+        var cards = arr.map(function(p){return cardHTML(p,false);}).filter(Boolean);
+        if(!cards.length) return '';
+        return '<div class="psec"><div class="psec-h"><span class="pbar '+esc(pos)+'"></span>'+esc(PLABEL[pos]||pos)+'<span class="psec-n">'+cards.length+'</span></div>'+cards.join('')+'</div>';
+      }).join('');
+      rs.innerHTML = html || '<div class="none">Nothing on the roster matched this filter.</div>';
+    }
+
+    // waiver / draft radar (flat, sorted by adds already)
+    var ws = document.getElementById('waiverSec');
     var wcards = (lg.waivers||[]).map(function(p){return cardHTML(p,true);}).filter(Boolean);
-    wh.innerHTML = wcards.length ? wcards.join('') : '<div class="none">No waiver-wire chatter matched.</div>';
-    document.getElementById('waiverN').textContent = wcards.length + ' of ' + (lg.waivers||[]).length;
-    document.getElementById('waiverT').textContent = lg.waiverLabel || 'Waiver Wire Radar';
-    document.getElementById('waiverSec').classList.toggle('hide', !(lg.waivers||[]).length);
+    if((lg.waivers||[]).length){
+      ws.classList.remove('hide');
+      document.getElementById('waiverT').textContent = lg.waiverLabel || 'Waiver Wire Radar';
+      document.getElementById('waiverN').textContent = wcards.length+' of '+lg.waivers.length;
+      document.getElementById('waivers').innerHTML = wcards.length ? wcards.join('') : '<div class="none">No waiver chatter matched this filter.</div>';
+    } else ws.classList.add('hide');
   }
 
   document.addEventListener('click', function(e){
-    var lgb = e.target.closest('.lg');
-    if(lgb){ state.league = lgb.dataset.k; render(); window.scrollTo({top:0,behavior:'smooth'}); return; }
-    var ch = e.target.closest('.chip');
-    if(ch){ state.cat = ch.dataset.c; render(); return; }
+    var t;
+    if((t = e.target.closest('.lg'))){ state.league = t.dataset.k; render(); window.scrollTo({top:0}); return; }
+    if((t = e.target.closest('.chip[data-c]'))){ state.cat = t.dataset.c; render(); return; }
+    if((t = e.target.closest('#xall'))){ state.xall = !state.xall; render(); return; }
+    if((t = e.target.closest('.morebtn'))){ var k=t.dataset.k; state.open[k]=!state.open[k]; render(); return; }
+    if((t = e.target.closest('.prow'))){ var k2=t.dataset.k; state.open[k2]=!state.open[k2]; render(); return; }
   });
   var qi = document.getElementById('q');
   if(qi) qi.addEventListener('input', function(e){ state.q = e.target.value.trim(); render(); });
