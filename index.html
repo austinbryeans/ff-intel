@@ -15,10 +15,10 @@
 html{-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--tx);font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,system-ui,sans-serif;padding-bottom:70px}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
 
 header.top{position:sticky;top:0;z-index:50;background:rgba(12,15,21,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;align-items:center;gap:12px;padding:11px 16px;max-width:860px;margin:0 auto;flex-wrap:wrap}
+.top-in{display:flex;align-items:center;gap:12px;padding:11px 16px;max-width:1240px;margin:0 auto;flex-wrap:wrap}
 .brand{font-weight:750;font-size:16px;display:flex;gap:8px;align-items:center;letter-spacing:-.2px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn)}
 .lgs{display:flex;gap:6px}
@@ -41,8 +41,8 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(12,15,21,.9);backdro
 .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:12px 14px;color:var(--tx2);font-size:13px;margin-top:18px}
 .note b{color:var(--tx)}
 
-/* ---- signal board: flat, high contrast ---- */
-.sigs{display:grid;gap:7px}
+/* ---- signal board: flat, high contrast, 2-up on desktop ---- */
+.sigs{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(430px,1fr))}
 .sig{display:block;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--tx3);border-radius:10px;padding:10px 13px}
 .sig:hover{background:var(--card2)}
 .sig.c-injury{border-left-color:var(--red)}
@@ -54,7 +54,7 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(12,15,21,.9);backdro
 .sh b{font-size:13.5px;font-weight:700}
 .sm{color:var(--tx3);font-size:11.5px}
 .sago{color:var(--tx3);font-size:11px;margin-left:auto}
-.st{color:#d8dfec;font-size:13px;line-height:1.5}
+.st{color:#d8dfec;font-size:13px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* ---- controls ---- */
 .ctrls{display:flex;gap:7px;flex-wrap:wrap;align-items:center;position:sticky;top:51px;z-index:40;background:var(--bg);padding:12px 0 9px;margin-top:8px}
@@ -71,8 +71,11 @@ input.q:focus{border-color:var(--acc)}
 .pbar.QB{background:var(--pink)} .pbar.RB{background:var(--grn)} .pbar.WR{background:var(--acc)} .pbar.TE{background:var(--gold)}
 .psec-n{color:var(--tx3);font-weight:650}
 
+/* ---- two-column flow on desktop, one on phone ---- */
+.cols{columns:2 430px;column-gap:10px}
+
 /* ---- player cards (accordion) ---- */
-.pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:9px;overflow:hidden}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;break-inside:avoid;-webkit-column-break-inside:avoid}
 .pcard.hot{border-color:rgba(255,92,92,.4)}
 .prow{display:flex;align-items:center;gap:12px;padding:11px 14px;cursor:pointer;-webkit-user-select:none;user-select:none}
 .prow:hover{background:var(--card2)}
@@ -127,6 +130,7 @@ footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var
   .ctrls{position:static}
   .top-in{gap:8px}
   .sago{margin-left:0;width:100%}
+  .sigs{grid-template-columns:1fr}
 }
 </style>
 </head><body>
@@ -172,7 +176,6 @@ footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var
   var state = { league: D.leagues[0] && D.leagues[0].key, cat:'all', q:'', open:{}, xall:false };
   var POS = ['QB','RB','WR','TE','K','DEF'];
   var PLABEL = {QB:'Quarterbacks',RB:'Running Backs',WR:'Wide Receivers',TE:'Tight Ends',K:'Kickers',DEF:'Defenses'};
-  var SLOT = {STARTER:0,BENCH:1,IR:2,TAXI:3};
 
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
   function agoStr(h){ if(h==null) return ''; if(h<1) return Math.max(1,Math.round(h*60))+'m'; if(h<24) return Math.round(h)+'h'; return Math.round(h/24)+'d'; }
@@ -238,7 +241,8 @@ footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var
     }
     var chev = (!filterMode() && vis.length>2) ? '<div class="chev">\u25be</div>' : '';
 
-    return '<div class="pcard'+(open?' open':'')+(p.alert?' hot':'')+'">'
+    var injHot = p.alert && p.alert.category==='injury';
+    return '<div class="pcard'+(open?' open':'')+(injHot?' hot" title="Fresh injury news flagged today':'')+'">'
       + '<div class="prow" data-k="'+esc(key)+'">'
       + '<div class="pos '+esc(p.pos||'')+'">'+esc(p.pos||'?')+'</div>'
       + '<div class="pmeta"><div class="pname">'+esc(p.name)+'</div><div class="psub">'+esc(sub)+' '+badges+'</div></div>'
@@ -287,10 +291,10 @@ footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var
       var html = POS.concat(['Other']).map(function(pos){
         var arr = byPos[pos];
         if(!arr || !arr.length) return '';
-        arr.sort(function(a,b){ var s=(SLOT[a.slot]!=null?SLOT[a.slot]:9)-(SLOT[b.slot]!=null?SLOT[b.slot]:9); return s || (b.heat||0)-(a.heat||0); });
+        arr.sort(function(a,b){ return (b.heat||0)-(a.heat||0); });
         var cards = arr.map(function(p){return cardHTML(p,false);}).filter(Boolean);
         if(!cards.length) return '';
-        return '<div class="psec"><div class="psec-h"><span class="pbar '+esc(pos)+'"></span>'+esc(PLABEL[pos]||pos)+'<span class="psec-n">'+cards.length+'</span></div>'+cards.join('')+'</div>';
+        return '<div class="psec"><div class="psec-h"><span class="pbar '+esc(pos)+'"></span>'+esc(PLABEL[pos]||pos)+'<span class="psec-n">'+cards.length+'</span></div><div class="cols">'+cards.join('')+'</div></div>';
       }).join('');
       rs.innerHTML = html || '<div class="none">Nothing on the roster matched this filter.</div>';
     }
@@ -302,7 +306,7 @@ footer{margin-top:44px;padding:16px 0;border-top:1px solid var(--line);color:var
       ws.classList.remove('hide');
       document.getElementById('waiverT').textContent = lg.waiverLabel || 'Waiver Wire Radar';
       document.getElementById('waiverN').textContent = wcards.length+' of '+lg.waivers.length;
-      document.getElementById('waivers').innerHTML = wcards.length ? wcards.join('') : '<div class="none">No waiver chatter matched this filter.</div>';
+      document.getElementById('waivers').innerHTML = wcards.length ? '<div class="cols">'+wcards.join('')+'</div>' : '<div class="none">No waiver chatter matched this filter.</div>';
     } else ws.classList.add('hide');
   }
 
